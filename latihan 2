@@ -1,0 +1,4 @@
+panjang = int(input('masukkan panjang'))
+lebar = int(input('massukan lebar'))
+luas = panjang * lebar
+print('luas persegi panjangnya adala =', luas)
