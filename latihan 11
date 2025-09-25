@@ -1,0 +1,9 @@
+buah = ("apple", "manga", "jeruk", "pisang")
+print("apple:",buah[0]) # output: apple
+print("pisang",buah[-1]) # output: pisang
+# slicinh (memotong taple)
+print("jumlah buah:",buah[0:2]) # output ('apel', 'manga')
+# Panjang tuple
+print("apple", "manga", "jeruk", "pisang:",len(buah)) #output 4 
+# mengecek keberadaan elemen
+print("Apakah'manga' ada?","manga"in buah) # output true
