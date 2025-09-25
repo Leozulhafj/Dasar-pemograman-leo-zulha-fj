@@ -1,0 +1,6 @@
+# conditional.2.py
+late = False
+if late:
+    print('i need to call my boss')
+else:
+    print('no neeed to call my boss')
