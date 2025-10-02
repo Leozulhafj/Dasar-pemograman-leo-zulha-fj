@@ -1,0 +1,6 @@
+people = ['leoo', 'fredde', 'fredagte',  'egrtrrtgd',]
+ages = [56, 46, 47, 65,]
+nasionalisme = ['amerika', 'afrika', 'england', 'indonesia']
+for data in zip(people, ages, nasionalisme):
+  person, age, nasional = data
+  print(person, age, nasional)
