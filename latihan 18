@@ -1,0 +1,10 @@
+belanja = float(input("massukan belanja:"))
+if belanja >= 1000000:
+  diskon = 0,25
+  total = belanja-diskon
+elif belanja >= 500000:
+  diskon = 0,10
+  total = belanja-diskon
+else:
+  diskon = 0
+print(total)
