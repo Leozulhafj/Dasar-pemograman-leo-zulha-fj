@@ -1,0 +1,7 @@
+def jumlah(a, b):
+    hasil = a + b
+    return hasil       
+
+a = int(input("Masukkan angka pertama: "))
+b = int(input("Masukkan angka kedua: "))
+print("Hasil penjumlahan:", jumlah(a, b))
