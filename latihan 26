@@ -1,0 +1,68 @@
+# Program Rapor Siswa 
+
+def hitung_rata(nilai_list):
+    """Menghitung rata-rata dari list nilai (float)."""
+    if not nilai_list:
+        return 0.0
+    return sum(nilai_list) / len(nilai_list)
+
+def get_predikat(rata):
+    """Menentukan predikat berdasarkan nilai rata-rata."""
+    if rata>=100:
+    	return"S (Otak google. dikira saya percaya)"
+    elif rata >= 90:
+        return "A (Sangat Baik)"
+    elif rata >= 80:
+        return "B (Baik)"
+    elif rata >= 70:
+        return "C (Cukup)"
+    elif rata >= 60:
+        return "D (Kurang)"
+    else:
+        return "E (Sangat Kurang)"
+
+def tampilkan_rapor(nama, kelas, daftar_nilai):
+    """Mencetak rapor siswa dalam format rapi."""
+    print("\n===== RAPOR SISWA =====")
+    print(f"Nama  : {nama}")
+    print(f"Kelas : {kelas}")
+    print("------------------------------")
+    total = 0.0
+    for pelajaran, nilai in daftar_nilai.items():
+        print(f"{pelajaran:15s} : {nilai:.2f}")
+        total += nilai
+    print("------------------------------")
+    rata = hitung_rata(list(daftar_nilai.values()))
+    print(f"Rata-rata : {rata:.2f}")
+    print(f"Predikat  : {get_predikat(rata)}")
+    print("==============================\n")
+
+def input_nilai_valid(pesan):
+    """Membantu input nilai dengan validasi (0-100)."""
+    while True:
+        try:
+            v = float(input(pesan))
+            if v < 0 or v > 100:
+                print("Nilai harus antara 0 sampai 100. Coba lagi.")
+                continue
+            return v
+        except ValueError:
+            print("Input tidak valid. Masukkan angka (mis. 85 atau 78.5).")
+
+def main():
+    print("=== Program Input Rapor Siswa ===")
+    nama = input("Masukkan nama siswa: ").strip()
+    kelas = input("Masukkan kelas: ").strip()
+
+    # Daftar mata pelajaran — ubah sesuai kebutuhan
+    mapel = ["MTK", "B.Indonesia", "B.Inggris", "IPA", "IPS","PAI","DPPLG","KMNGKB","BK","PPKN","SB","KKA","PJOK","SEJARAH",]
+
+    nilai_mapel = {}
+    print("\nMasukkan nilai untuk setiap mata pelajaran (0-100).")
+    for pel in mapel:
+        nilai = input_nilai_valid(f"Masukkan nilai {pel}: ")
+        nilai_mapel[pel] = nilai
+
+    tampilkan_rapor(nama, kelas, nilai_mapel)
+if __name__ == "__main__":
+    main()
